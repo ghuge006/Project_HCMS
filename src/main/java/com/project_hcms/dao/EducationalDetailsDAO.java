@@ -11,7 +11,7 @@ public interface EducationalDetailsDAO {
 
 	void updateEducationDetails(EducationDetails educationDetails);
 
-	void deleteEducationDetails(int educationId);
+	void deleteEducationDetails(EducationDetails educationDetails);
 	
 	EducationDetails getEducationDetailsById(int educationId);
 }

@@ -12,7 +12,7 @@ public interface TrainingSchedulesDAO {
 
 	void updateTrainingSchedules(TrainingSchedules trainingSchedules);
 
-	void deleteTrainingSchedules(int scheduleId);
+	void deleteTrainingSchedules(TrainingSchedules trainingSchedules);
 	
 	TrainingSchedules getTrainingSchedulesById(int scheduleId);
 }

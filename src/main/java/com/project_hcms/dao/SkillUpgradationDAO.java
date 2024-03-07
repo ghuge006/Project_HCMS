@@ -11,7 +11,7 @@ public interface SkillUpgradationDAO {
 
 	void updateSkillUpgradation(SkillUpgradation skillUpgradation);
 
-	void deleteSkillUpgradation(int upgradationId);
+	void deleteSkillUpgradation(SkillUpgradation skillUpgradation);
 	
 	SkillUpgradation getSkillUpgradationById(int upgradationId);
 }

@@ -12,7 +12,7 @@ public interface TrainingModulesDAO {
 
 	void updateTrainingModules(TrainingModules trainingModules);
 
-	void deleteTrainingModules(int moduleId);
+	void deleteTrainingModules(TrainingModules trainingModules);
 	
 	TrainingModules getTrainingModulesById(int moduleId);
 }

@@ -20,8 +20,8 @@ public class RoleDAOImpl implements RoleDAO {
 
 	@Override
 	public List<Role> getAllRole() {
+		
 		Session session = entityManager.unwrap(Session.class);
-
 		return session.createQuery("from Role", Role.class).getResultList();
 	}
 
@@ -33,20 +33,19 @@ public class RoleDAOImpl implements RoleDAO {
 
 	@Override
 	public void updateRole(Role role) {
-		// TODO Auto-generated method stub
+		entityManager.unwrap(Session.class).merge(role);
 		
 	}
 
 	@Override
-	public void deleteRole(int roleId) {
-		// TODO Auto-generated method stub
+	public void deleteRole(Role role) {
+		entityManager.unwrap(Session.class).remove(role);
 		
 	}
 
 	@Override
 	public Role getRoleById(int roleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.unwrap(Session.class).get(Role.class,roleId);
 	}
 
 }

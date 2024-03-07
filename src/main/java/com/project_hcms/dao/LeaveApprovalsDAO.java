@@ -11,7 +11,7 @@ public interface LeaveApprovalsDAO {
 
 	void updateLeaveApprovals(LeaveApprovals leaveApprovals);
 
-	void deleteLeaveApprovals(int approvalId);
+	void deleteLeaveApprovals(LeaveApprovals leaveApprovals);
 	
 	LeaveApprovals getLeaveApprovalsById(int approvalId);
 }

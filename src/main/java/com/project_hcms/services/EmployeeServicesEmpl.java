@@ -14,8 +14,6 @@ public class EmployeeServicesEmpl implements EmployeeServices{
 	private EmployeeDAO employeeDAO; 
 	@Override
 	public List<Employee> getAllEmployee() {
-
-
 		return employeeDAO.getAllEmployee();
 	}
 
@@ -26,20 +24,20 @@ public class EmployeeServicesEmpl implements EmployeeServices{
 
 	@Override
 	public void updateEmployee(Employee emp) {
-		// TODO Auto-generated method stub
+		employeeDAO.updateEmployee(emp);
 		
 	}
 
 	@Override
-	public void deleteEmployee(int empId) {
-		// TODO Auto-generated method stub
+	public void deleteEmployee(Employee emp) {
+		employeeDAO.deleteEmployee(emp);
 		
 	}
 
 	@Override
 	public Employee getEmployeeById(int empId) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return employeeDAO.getEmployeeById(empId);
 	}
 	
 	

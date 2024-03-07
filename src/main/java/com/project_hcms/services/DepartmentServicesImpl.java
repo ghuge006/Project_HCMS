@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.project_hcms.dao.DepartmentDAO;
 import com.project_hcms.entities.Department;
 
-import jakarta.transaction.Transactional;
 @Service
 public class DepartmentServicesImpl implements DepartmentServices {
 
@@ -25,27 +24,25 @@ public class DepartmentServicesImpl implements DepartmentServices {
 	@Override
 	public void addDepartment(Department dept) {
 		departmentDAO.addDepartment(dept);
-		
+
 	}
 
 	@Override
 	public void updateDepartment(Department dept) {
-		// TODO Auto-generated method stub
-		
+		departmentDAO.updateDepartment(dept);
+
 	}
 
 	@Override
-	public void deleteDepartment(int deptId) {
-		// TODO Auto-generated method stub
-		
+	public void deleteDepartment(Department dept) {
+		departmentDAO.deleteDepartment(dept);
+
 	}
 
 	@Override
 	public Department getDepartmentById(int deptId) {
 		// TODO Auto-generated method stub
-		return null;
+		return departmentDAO.getDepartmentById(deptId);
 	}
-	
-	
 
 }

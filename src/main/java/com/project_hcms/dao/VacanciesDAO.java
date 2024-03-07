@@ -12,7 +12,7 @@ public interface VacanciesDAO {
 
 	void updateVacancies(Vacancies vacancies);
 
-	void deleteVacancies(int vacancyId);
+	void deleteVacancies(Vacancies vacancies);
 	
 	Vacancies getVacanciesById(int vacancyId);
 }

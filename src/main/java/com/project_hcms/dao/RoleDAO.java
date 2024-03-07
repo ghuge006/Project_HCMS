@@ -12,7 +12,7 @@ public interface RoleDAO {
 
 	void updateRole(Role role);
 
-	void deleteRole(int roleId);
+	void deleteRole(Role role);
 	
 	Role getRoleById(int roleId);
 }

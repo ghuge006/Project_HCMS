@@ -26,20 +26,20 @@ public class RoleServicesImpl implements RoleServices {
 
 	@Override
 	public void updateRole(Role role) {
-		// TODO Auto-generated method stub
+		roleDAO.updateRole(role);
 		
 	}
 
 	@Override
-	public void deleteRole(int roleId) {
-		// TODO Auto-generated method stub
+	public void deleteRole(Role role) {
+		roleDAO.deleteRole(role);
 		
 	}
 
 	@Override
 	public Role getRoleById(int roleId) {
 		// TODO Auto-generated method stub
-		return null;
+		return roleDAO.getRoleById(roleId);
 	}
 
 }

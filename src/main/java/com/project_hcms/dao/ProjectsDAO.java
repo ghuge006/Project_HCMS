@@ -11,7 +11,7 @@ public interface ProjectsDAO {
 
 	void updateProjects(Projects projects);
 
-	void deleteProjects(int projectId);
+	void deleteProjects(Projects projects);
 	
 	Projects getProjectsById(int projectId);
 }

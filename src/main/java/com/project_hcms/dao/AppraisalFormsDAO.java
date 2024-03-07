@@ -11,7 +11,7 @@ public interface AppraisalFormsDAO {
 
 	void updateAppraisalForms(AppraisalForms appraisalForms);
 
-	void deleteAppraisalForms(int formId);
+	void deleteAppraisalForms(AppraisalForms appraisalForms);
 	
 	AppraisalForms getAppraisalFormsById(int formId);
 }

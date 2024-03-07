@@ -23,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 		Session session = entityManager.unwrap(Session.class);
 
-		return session.createQuery("from Employees", Employee.class).getResultList();
+		return session.createQuery("from Employee", Employee.class).getResultList();
 	}
 
 	@Override
@@ -35,20 +35,22 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public void updateEmployee(Employee emp) {
-		// TODO Auto-generated method stub
+		// update has been deprecated
+		entityManager.unwrap(Session.class).merge(emp);
 
 	}
 
 	@Override
-	public void deleteEmployee(int empId) {
-		// TODO Auto-generated method stub
+	public void deleteEmployee(Employee emp) {
+		entityManager.unwrap(Session.class).remove(emp);
 
 	}
 
 	@Override
 	public Employee getEmployeeById(int empId) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return entityManager.unwrap(Session.class).get(Employee.class, empId);
+		
 	}
 
 }

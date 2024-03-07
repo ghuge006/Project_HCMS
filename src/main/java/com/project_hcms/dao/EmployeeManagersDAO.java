@@ -12,7 +12,7 @@ public interface EmployeeManagersDAO {
 
 	void updateEmployeeManager(EmployeeManagers employeeManager);
 
-	void deleteEmployeeManager(int relationshipId);
+	void deleteEmployeeManager(EmployeeManagers employeeManager);
 	
 	EmployeeManagers getEmployeeManagerById(int relationshipId);
 }

@@ -11,7 +11,7 @@ public interface LeaveRequestsDAO {
 
 	void updateLeaveRequests(LeaveRequests leaveRequests);
 
-	void deleteLeaveRequests(int leaveRequestId);
+	void deleteLeaveRequests(LeaveRequests leaveRequests);
 	
 	LeaveRequests getLeaveRequestsById(int leaveRequestId);
 }

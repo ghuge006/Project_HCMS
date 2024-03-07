@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.project_hcms.entities.Department;
+import com.project_hcms.entities.Employee;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -19,7 +20,7 @@ public class DepartmentDAOimpl implements DepartmentDAO {
 	@Override
 	public List<Department> getAllDepartment() {
 		Session session = entityManager.unwrap(Session.class);
-		return session.createQuery("from Departments", Department.class).getResultList();
+		return session.createQuery("from Department", Department.class).getResultList();
 	}
 
 	@Override
@@ -30,20 +31,20 @@ public class DepartmentDAOimpl implements DepartmentDAO {
 
 	@Override
 	public void updateDepartment(Department dept) {
-		// TODO Auto-generated method stub
+		entityManager.unwrap(Session.class).merge(dept);
 		
 	}
 
 	@Override
-	public void deleteDepartment(int deptId) {
-		// TODO Auto-generated method stub
+	public void deleteDepartment(Department dept) {
+		entityManager.unwrap(Session.class).remove(dept);
 		
 	}
 
 	@Override
 	public Department getDepartmentById(int deptId) {
 		// TODO Auto-generated method stub
-		return null;
+		return entityManager.unwrap(Session.class).get(Department.class, deptId);
 	}
 
 }

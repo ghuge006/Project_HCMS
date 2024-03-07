@@ -11,7 +11,7 @@ public interface CandidateProfileDAO {
 
 	void updateCandidateProfile(CandidateProfiles candidateProfile);
 
-	void deleteCandidateProfile(int candidateId);
+	void deleteCandidateProfile(CandidateProfiles candidateProfile);
 	
 	CandidateProfiles getCandidateProfileById(int candidateId);
 }

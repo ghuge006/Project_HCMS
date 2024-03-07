@@ -11,7 +11,7 @@ public interface ExternalTrainerDAO {
 
 	void updateExternalTrainer(ExternalTrainers externalTrainer);
 
-	void deleteExternalTrainer(int trainerId);
+	void deleteExternalTrainer(ExternalTrainers externalTrainer);
 	
 	ExternalTrainers getExternalTrainerById(int trainerId);
 }

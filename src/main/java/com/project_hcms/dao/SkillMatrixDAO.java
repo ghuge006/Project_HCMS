@@ -11,7 +11,7 @@ public interface SkillMatrixDAO {
 
 	void updateSkillMatrix(SkillMatrix skillMatrix);
 
-	void deleteSkillMatrix(int matrixId);
+	void deleteSkillMatrix(SkillMatrix skillMatrix);
 	
 	SkillMatrix getSkillMatrixById(int matrixId);
 }
