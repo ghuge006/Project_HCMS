@@ -24,45 +24,45 @@ import com.project_hcms.services.RoleServices;
 public class RoleController {
 
 	@Autowired
-	RoleServices role;
+	RoleServices roleService;
 	
 	@GetMapping("/roles")
 	private ResponseEntity<List<Role>> getAll() {
 		
-		return new ResponseEntity<List<Role>>(role.getAllRole(), HttpStatus.OK);
+		return new ResponseEntity<List<Role>>(roleService.getAllRole(), HttpStatus.OK);
 
 	}
 	
 	@PostMapping("/roles")
-	private ResponseEntity<Void> save(@RequestBody Role r, UriComponentsBuilder ucBuilder) {
-		if (r == null) {
+	private ResponseEntity<Void> save(@RequestBody Role role, UriComponentsBuilder ucBuilder) {
+		if (role == null) {
 			throw new RuntimeException("Role Object can 't  be NULL");
 		}
-		role.addRole(r);
+		roleService.addRole(role);
 		HttpHeaders headers = new HttpHeaders();
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 	@GetMapping("/roles/{id}")
 	private ResponseEntity<Role> get(@PathVariable int id) {
-		Role r = role.getRoleById(id);
-		if (r == null) {
+		Role role = roleService.getRoleById(id);
+		if (role == null) {
 			return new ResponseEntity<Role>(HttpStatus.NOT_FOUND);
 		} else {
-			return new ResponseEntity<Role>(r, HttpStatus.OK);
+			return new ResponseEntity<Role>(role, HttpStatus.OK);
 		}
 	}
 	@PutMapping("/roles/{id}")
-	private ResponseEntity<Void> update(@RequestBody Role toBeUpdaterole, @PathVariable int id) {
-		if (toBeUpdaterole == null) {
+	private ResponseEntity<Void> update(@RequestBody Role toBeUpdateRole, @PathVariable int id) {
+		if (toBeUpdateRole == null) {
 			throw new RuntimeException("Role Object can 't  be NULL");
 		}
-		Role existingrole = role.getRoleById(id);
-		if(existingrole == null){
+		Role existingRole = roleService.getRoleById(id);
+		if(existingRole == null){
 			
 			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 			
 		} else {
-			role.updateRole(existingrole);
+			roleService.updateRole(existingRole);
 
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}
@@ -70,11 +70,11 @@ public class RoleController {
 
 	@DeleteMapping("/roles/{id}")
 	private ResponseEntity<Void> delete(@PathVariable int id) {
-		Role deleteRole = role.getRoleById(id);
+		Role deleteRole = roleService.getRoleById(id);
 		if (deleteRole == null) {
 			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 		} else {
-			role.deleteRole(deleteRole);
+			roleService.deleteRole(deleteRole);
 
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}
